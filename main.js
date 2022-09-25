@@ -105,6 +105,24 @@ function displayStudent(student) {
   clone.querySelector('[data-field="firstName"]').textContent = student.firstName;
   clone.querySelector('[data-field="lastName"]').textContent = student.lastName;
   clone.querySelector('[data-field="house"]').textContent = student.house;
+  clone.querySelector("[data-field=prefect]").addEventListener("click", (event) => {
+    student.isPrefect = !student.isPrefect;
+
+    if (student.isPrefect) {
+      event.target.classList.add("isPrefect");
+    } else {
+      event.target.classList.remove("isPrefect");
+    }
+  });
+  clone.querySelector("[data-field=inqSquad]").addEventListener("click", (event) => {
+    student.isInqSquad = !student.isInqSquad;
+
+    if (student.isInqSquad) {
+      event.target.classList.add("isInqSquad");
+    } else {
+      event.target.classList.remove("isInqSquad");
+    }
+  });
 
   // append clone to list
   document.querySelector("#studentListBody").appendChild(clone);
