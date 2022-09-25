@@ -14,6 +14,45 @@
       <h1>Hacked Hogwarts Student List</h1>
     </header>
     <main>
+      <div class="filteringOptions">
+        <div class="filterByHouse">
+          <p>Filter by house:</p>
+          <ol>
+            <li><button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor Only</button></li>
+            <li><button class="filter" data-action="filter" data-filter="slytherin">Slytherin Only</button></li>
+            <li><button class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw Only</button></li>
+            <li><button class="filter" data-action="filter" data-filter="hufflepuff">Hufflepuff Only</button></li>
+          </ol>
+        </div>
+
+        <div class="filterByStudentState">
+          <p>Filter by Student State:</p>
+          <ol>
+            <li><button class="filter" data-action="filter" data-filter="allStudents">All Students</button></li>
+            <li><button class="filter" data-action="filter" data-filter="enrolledStudents">Enrolled Students Only</button></li>
+            <li><button class="filter" data-action="filter" data-filter="expelledStudents">Expelled Students Only</button></li>
+          </ol>
+        </div>
+
+        <div class="filterByStudentRole">
+          <p>Filter by Student Roles:</p>
+          <ol>
+            <li><button class="filter" data-action="filter" data-filter="noRoles">No Roles Only</button></li>
+            <li><button class="filter" data-action="filter" data-filter="prefects">Prefects Only</button></li>
+            <li><button class="filter" data-action="filter" data-filter="inqSquadMembers">Inquisatle Squad Members Only</button></li>
+          </ol>
+        </div>
+
+        <div class="filterByStudentBlood">
+          <p>Filter by Student Blood-Status:</p>
+          <ol>
+            <li><button class="filter" data-action="filter" data-filter="muggleBlood">Muggles Only</button></li>
+            <li><button class="filter" data-action="filter" data-filter="halfBlood">Half Bloods Only</button></li>
+            <li><button class="filter" data-action="filter" data-filter="pureBlood">Pure Bloods Only</button></li>
+          </ol>
+        </div>
+      </div>
+
       <table>
         <thead>
           <th>First Name</th>
