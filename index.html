@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hacked Hogwarts Student List</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="assets/Student-Favicon.png" type="image/x-icon" />
     <meta name="robots" content="noindex,nofollow" />
   </head>
@@ -14,9 +14,10 @@
       <h1>Hacked Hogwarts Student List</h1>
     </header>
     <main>
+      <h2>Filtering Options</h2>
       <div class="filteringOptions">
         <div class="filterByHouse">
-          <p>Filter by house:</p>
+          <h3>by house:</h3>
           <ol>
             <li><button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor Only</button></li>
             <li><button class="filter" data-action="filter" data-filter="slytherin">Slytherin Only</button></li>
@@ -26,7 +27,7 @@
         </div>
 
         <div class="filterByStudentState">
-          <p>Filter by Student State:</p>
+          <h3>by Student State:</h3>
           <ol>
             <li><button class="filter" data-action="filter" data-filter="allStudents">All Students</button></li>
             <li><button class="filter" data-action="filter" data-filter="enrolledStudents">Enrolled Students Only</button></li>
@@ -35,7 +36,7 @@
         </div>
 
         <div class="filterByStudentRole">
-          <p>Filter by Student Roles:</p>
+          <h3>by Student Roles:</h3>
           <ol>
             <li><button class="filter" data-action="filter" data-filter="noRoles">No Roles Only</button></li>
             <li><button class="filter" data-action="filter" data-filter="prefects">Prefects Only</button></li>
@@ -44,7 +45,7 @@
         </div>
 
         <div class="filterByStudentBlood">
-          <p>Filter by Student Blood-Status:</p>
+          <h3>by Student Blood-Status:</h3>
           <ol>
             <li><button class="filter" data-action="filter" data-filter="muggleBlood">Muggles Only</button></li>
             <li><button class="filter" data-action="filter" data-filter="halfBlood">Half Bloods Only</button></li>
@@ -53,17 +54,18 @@
         </div>
       </div>
 
-      <table>
+      <table id="list">
         <thead>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>House</th>
-          <th>Roles</th>
-          <th>
-            More Details
-            <!-- empty = modal button-->
-          </th>
+          <tr id="sorting">
+            <th data-action="sort" data-sort-direction="asc" data-sort="firstName">First Name</th>
+            <th data-action="sort" data-sort-direction="asc" data-sort="lastName">Last Name</th>
+            <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
+            <th data-action="sort" data-sort-direction="asc" data-sort="prefect">Prefect</th>
+            <th data-action="sort" data-sort-direction="asc" data-sort="ingSquad">Inquisatle Squad</th>
+            <th>View More</th>
+          </tr>
         </thead>
+
         <tbody>
           <!-- Student template will be copied and inserted here-->
 
@@ -71,29 +73,40 @@
             <td>Harry</td>
             <td>Potter</td>
             <td>Gryffindor</td>
-            <td>
-              <ol>
-                <li><img src="assets/prefectBadge.png" alt="" class="prefectImg isPrefect" /></li>
-                <li><img src="assets/ingSquadBadge.png" alt="" class="inqSquadImg isInqSquad" /></li>
-              </ol>
-            </td>
+            <td><img src="assets/prefectBadge.png" alt="prefect badge" class="prefectImg isPrefect" /></td>
+            <td><img src="assets/ingSquadBadge.png" alt="inq squad badge" class="inqSquadImg isInqSquad" /></td>
+            <td><button class="modalButton">See More</button></td>
+          </tr>
+          <tr class="studentRow">
+            <td>Harry</td>
+            <td>Potter</td>
+            <td>Gryffindor</td>
+            <td><img src="assets/prefectBadge.png" alt="prefect badge" class="prefectImg isPrefect" /></td>
+            <td><img src="assets/ingSquadBadge.png" alt="inq squad badge" class="inqSquadImg isInqSquad" /></td>
+            <td><button class="modalButton">See More</button></td>
+          </tr>
+          <tr class="studentRow">
+            <td>Harry</td>
+            <td>Potter</td>
+            <td>Gryffindor</td>
+            <td><img src="assets/prefectBadge.png" alt="prefect badge" class="prefectImg isPrefect" /></td>
+            <td><img src="assets/ingSquadBadge.png" alt="inq squad badge" class="inqSquadImg isInqSquad" /></td>
             <td><button class="modalButton">See More</button></td>
           </tr>
         </tbody>
-        <tfoot>
-          <td>
-            <ol>
-              <li>Total Students: <span></span></li>
-              <li>Enrolled Students: <span></span></li>
-              <li>Expelled Students: <span></span></li>
-              <li>Gryffindor Students: <span></span></li>
-              <li>Slitherin Students: <span></span></li>
-              <li>Ravenclaw Students: <span></span></li>
-              <li>Hufflepuff Students: <span></span></li>
-            </ol>
-          </td>
-        </tfoot>
+        <tfoot></tfoot>
       </table>
+      <div class="studentStatistics">
+        <ol>
+          <li>Total Students: <span> 2</span></li>
+          <li>Enrolled Students: <span> 2</span></li>
+          <li>Expelled Students: <span> 2</span></li>
+          <li>Gryffindor Students: <span> 2</span></li>
+          <li>Slitherin Students: <span> 2</span></li>
+          <li>Ravenclaw Students: <span> 2</span></li>
+          <li>Hufflepuff Students: <span> 2</span></li>
+        </ol>
+      </div>
     </main>
     <footer></footer>
   </body>
