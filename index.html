@@ -65,6 +65,8 @@
           </th>
         </thead>
         <tbody>
+          <!-- Student template will be copied and inserted here-->
+
           <tr class="studentRow">
             <td>Harry</td>
             <td>Potter</td>
@@ -95,5 +97,21 @@
     </main>
     <footer></footer>
   </body>
+
+  <!-- STUDENT TEMPLATE OBJECT -->
+  <template id="studentTemplate">
+    <tr>
+      <td data-field="firstName">☆</td>
+      <td data-field="lastName">NAME</td>
+      <td data-field="house">TYPE</td>
+      <td data-field="roles">
+        <ol>
+          <li data-field="prefect"><img src="assets/prefectBadge.png" alt="icon of prefect badge" class="prefectImg" /></li>
+          <li data-field="inqSquad"><img src="assets/ingSquadBadge.png" alt="icon of inq squad badge" class="inqSquadImg" /></li>
+        </ol>
+      </td>
+      <td data-field="modal"><button class="modalButton">See More</button></td>
+    </tr>
+  </template>
   <script src="main.js"></script>
 </html>
