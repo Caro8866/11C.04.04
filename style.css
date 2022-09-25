@@ -122,3 +122,13 @@ ol {
   gap: 1rem;
   justify-content: space-evenly;
 }
+
+.prefectImg,
+.inqSquadImg {
+  opacity: 35%;
+}
+
+.isPrefect,
+.isInqSquad {
+  opacity: 100%;
+}

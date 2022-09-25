@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <table id="list">
+      <table id="studentList">
         <thead>
           <tr id="sorting">
             <th data-action="sort" data-sort-direction="asc" data-sort="firstName">First Name</th>
@@ -66,25 +66,9 @@
           </tr>
         </thead>
 
-        <tbody>
+        <tbody id="studentListBody">
           <!-- Student template will be copied and inserted here-->
 
-          <tr class="studentRow">
-            <td>Harry</td>
-            <td>Potter</td>
-            <td>Gryffindor</td>
-            <td><img src="assets/prefectBadge.png" alt="prefect badge" class="prefectImg isPrefect" /></td>
-            <td><img src="assets/ingSquadBadge.png" alt="inq squad badge" class="inqSquadImg isInqSquad" /></td>
-            <td><button class="modalButton">See More</button></td>
-          </tr>
-          <tr class="studentRow">
-            <td>Harry</td>
-            <td>Potter</td>
-            <td>Gryffindor</td>
-            <td><img src="assets/prefectBadge.png" alt="prefect badge" class="prefectImg isPrefect" /></td>
-            <td><img src="assets/ingSquadBadge.png" alt="inq squad badge" class="inqSquadImg isInqSquad" /></td>
-            <td><button class="modalButton">See More</button></td>
-          </tr>
           <tr class="studentRow">
             <td>Harry</td>
             <td>Potter</td>
@@ -114,15 +98,12 @@
   <!-- STUDENT TEMPLATE OBJECT -->
   <template id="studentTemplate">
     <tr>
-      <td data-field="firstName">☆</td>
-      <td data-field="lastName">NAME</td>
-      <td data-field="house">TYPE</td>
-      <td data-field="roles">
-        <ol>
-          <li data-field="prefect"><img src="assets/prefectBadge.png" alt="icon of prefect badge" class="prefectImg" /></li>
-          <li data-field="inqSquad"><img src="assets/ingSquadBadge.png" alt="icon of inq squad badge" class="inqSquadImg" /></li>
-        </ol>
-      </td>
+      <td data-field="firstName">Harry</td>
+      <td data-field="lastName">Potter</td>
+      <td data-field="house">House</td>
+      <td data-field="prefect"><img src="assets/prefectBadge.png" alt="icon of prefect badge" class="prefectImg" /></td>
+      <td data-field="inqSquad"><img src="assets/ingSquadBadge.png" alt="icon of inq squad badge" class="inqSquadImg" /></td>
+
       <td data-field="modal"><button class="modalButton">See More</button></td>
     </tr>
   </template>
