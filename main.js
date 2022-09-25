@@ -95,7 +95,17 @@ function prepareObject(jsonObject) {
 }
 
 function displayList(students) {
+  document.querySelector("#studentListBody").innerHTML = ""; // clear list
   allStudents.forEach(displayStudent);
 }
 
-function displayStudent(student) {}
+function displayStudent(student) {
+  let clone = document.querySelector("#studentTemplate").content.cloneNode(true); // create clone
+
+  clone.querySelector('[data-field="firstName"]').textContent = student.firstName;
+  clone.querySelector('[data-field="lastName"]').textContent = student.lastName;
+  clone.querySelector('[data-field="house"]').textContent = student.house;
+
+  // append clone to list
+  document.querySelector("#studentListBody").appendChild(clone);
+}
