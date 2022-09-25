@@ -23,6 +23,12 @@ const Student = {
   isInqSquad: 0,
 };
 
+const settings = {
+  filter: "all",
+  sortBy: "firstName",
+  sortDir: "asc",
+};
+
 function start() {
   console.log("Ready to start!");
   loadJSON();
@@ -41,6 +47,50 @@ function prepareObjects(jsonData) {
 }
 
 function prepareObject(jsonObject) {
+  const student = Object.create(Student);
+
+  let fullName = jsonObject.fullname.trim(); // Student full name with no space before or after
+  let house = jsonObject.house.trim(); // Student house with no space before or after
+  let gender = jsonObject.gender.trim(); // Student gender with no space before or after
+
+  //? Name prep
+
+  // First name cleaning & selecting
+  if (fullName.includes(" ")) {
+    // Make first char upper case and rest lower case
+    student.firstName = fullName.substring(0, 1).toUpperCase() + fullName.substring(1, fullName.indexOf(" ")).toLowerCase();
+  } else {
+    // if only first name is know make first char upper case and rest lower case
+    student.firstName = fullName.substring(0, 1).toUpperCase() + fullName.substring(1).toLowerCase();
+  }
+
+  // Last name cleaning & selecting
+  if (fullName.includes(" ")) {
+    student.lastName = fullName.substring(fullName.lastIndexOf(" ") + 1, fullName.lastIndexOf(" ") + 2).toUpperCase() + fullName.substring(fullName.lastIndexOf(" ") + 2).toLowerCase();
+  }
+
+  // middle name
+
+  if (fullName.split(" ").length > 2) {
+    student.middleName = fullName.substring(fullName.indexOf(" ") + 1, fullName.lastIndexOf(" "));
+  }
+  // nickname
+  if (fullName.includes('"')) {
+    student.nickName = fullName.substring(fullName.indexOf('"') + 1, fullName.lastIndexOf('"'));
+    student.middleName = "";
+  }
+
+  // gender
+  student.gender = gender.substring(1, 0).toUpperCase() + gender.substring(1).toLowerCase();
+
+  // image
+  student.image = `${student.lastName.toLowerCase()}_${student.firstName.charAt(0).toLowerCase()}.png`;
+
+  // house
+  student.house = house.substring(1, 0).toUpperCase() + house.substring(1).toLowerCase();
+
+  // Blood
+
   return student;
 }
 
