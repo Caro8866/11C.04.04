@@ -13,7 +13,47 @@
     <header>
       <h1>Hacked Hogwarts Student List</h1>
     </header>
-    <main></main>
+    <main>
+      <table>
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>House</th>
+          <th>Roles</th>
+          <th>
+            More Details
+            <!-- empty = modal button-->
+          </th>
+        </thead>
+        <tbody>
+          <tr class="studentRow">
+            <td>Harry</td>
+            <td>Potter</td>
+            <td>Gryffindor</td>
+            <td>
+              <ol>
+                <li><img src="assets/prefectBadge.png" alt="" class="prefectImg isPrefect" /></li>
+                <li><img src="assets/ingSquadBadge.png" alt="" class="inqSquadImg isInqSquad" /></li>
+              </ol>
+            </td>
+            <td><button class="modalButton">See More</button></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <td>
+            <ol>
+              <li>Total Students: <span></span></li>
+              <li>Enrolled Students: <span></span></li>
+              <li>Expelled Students: <span></span></li>
+              <li>Gryffindor Students: <span></span></li>
+              <li>Slitherin Students: <span></span></li>
+              <li>Ravenclaw Students: <span></span></li>
+              <li>Hufflepuff Students: <span></span></li>
+            </ol>
+          </td>
+        </tfoot>
+      </table>
+    </main>
     <footer></footer>
   </body>
   <script src="main.js"></script>
