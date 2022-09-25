@@ -3,6 +3,7 @@
 /* connectivity test */
 window.addEventListener("DOMContentLoaded", start);
 
-function start() {
+/* function start() {
   alert("Hello World");
 }
+ */
