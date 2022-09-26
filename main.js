@@ -281,4 +281,10 @@ function displayStudent(student) {
 
   // append clone to list
   document.querySelector("#studentListBody").appendChild(clone);
+
+  updateStatistics();
+}
+
+function updateStatistics() {
+  document.querySelector("#totalStudents").textContent = allStudents.length;
 }
