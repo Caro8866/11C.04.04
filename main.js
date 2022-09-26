@@ -279,6 +279,19 @@ function displayStudent(student) {
     }
   });
 
+  clone.querySelector(".modalButton").addEventListener("click", () => {
+    document.querySelector(".modal").classList.remove("hidden");
+    console.log("clicked");
+    if (student.nickName === "-unknown-") {
+      document.querySelector("#studentFullName").textContent = student.firstName + " " + student.lastName;
+    } else {
+      document.querySelector("#studentFullName").textContent = student.firstName + " " + student.lastName + ' | "' + student.nickName + '"';
+    }
+    document.querySelector("#studentGender").textContent = student.gender;
+    document.querySelector("#studentHouse").textContent = student.house;
+    document.querySelector("#studentImage").src = `assets/images/${student.image}`;
+  });
+
   // append clone to list
   document.querySelector("#studentListBody").appendChild(clone);
 

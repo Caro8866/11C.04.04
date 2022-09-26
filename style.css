@@ -136,3 +136,27 @@ ol {
 .hidden {
   display: none;
 }
+
+/* Modal */
+.modal {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  margin: auto;
+  align-self: center;
+  border-radius: 10px;
+  width: 70%;
+  z-index: 1;
+}
+
+.inqSquadImg,
+.prefectImg {
+  width: 50px;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
