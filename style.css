@@ -156,3 +156,7 @@ ol {
   width: 50px;
   height: auto;
 }
+
+.hidden {
+  display: none;
+}
