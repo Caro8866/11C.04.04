@@ -24,7 +24,7 @@ const Student = {
 };
 
 const settings = {
-  filter: "all",
+  filterBy: "allStudents",
   sortBy: "firstName",
   sortDir: "asc",
 };
@@ -32,6 +32,7 @@ const settings = {
 function start() {
   console.log("Ready to start!");
   loadJSON();
+  registerButtons();
 }
 async function loadJSON() {
   const response = await fetch(jsonURL);
@@ -39,6 +40,11 @@ async function loadJSON() {
 
   // when loaded, prepare data objects
   prepareObjects(jsonData);
+}
+
+function registerButtons() {
+  document.querySelectorAll(".filter").forEach((button) => button.addEventListener("click", selectFilter));
+  // sort button
 }
 
 function prepareObjects(jsonData) {
@@ -94,9 +100,65 @@ function prepareObject(jsonObject) {
   return student;
 }
 
-function displayList(students) {
+function selectFilter(event) {
+  const filter = event.target.dataset.filter;
+  console.log(`User selected ${filter}`);
+  //filterList(filter);
+  setFilter(filter);
+}
+
+function setFilter(filter) {
+  settings.filterBy = filter;
+  buildList();
+}
+function filterList(filteredList) {
+  // let filteredList = allStudents;
+  if (settings.filterBy === "gryffindor") {
+    // Filtered list of only gryffindor
+    filteredList = allStudents.filter(isGryffindor);
+  } else if (settings.filterBy === "hufflepuff") {
+    // Filtered list of only hufflepuff
+    filteredList = allStudents.filter(isHufflepuff);
+  } else if (settings.filterBy === "ravenclaw") {
+    // Filtered list of only Ravenclaw
+    filteredList = allStudents.filter(isRavenclaw);
+  } else if (settings.filterBy === "slytherin") {
+    // Filtered list of only Slytherin
+    filteredList = allStudents.filter(isSlytherin);
+  }
+
+  return filteredList;
+}
+
+function isGryffindor(student) {
+  return student.house === "Gryffindor";
+}
+
+function isHufflepuff(student) {
+  return student.house === "Hufflepuff";
+}
+
+function isRavenclaw(student) {
+  return student.house === "Ravenclaw";
+}
+
+function isSlytherin(student) {
+  return student.house === "Slytherin";
+}
+
+// sort
+
+function buildList() {
+  const currentList = filterList(allStudents);
+  const sortedList = sortList(currentList);
+  // console.table(sortedList);
+
+  return sortedList;
+}
+
+function displayList(activeArray) {
   document.querySelector("#studentListBody").innerHTML = ""; // clear list
-  allStudents.forEach(displayStudent);
+  activeArray.forEach(displayStudent);
 }
 
 function displayStudent(student) {

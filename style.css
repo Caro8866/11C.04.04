@@ -132,3 +132,7 @@ ol {
 .isInqSquad {
   opacity: 100%;
 }
+
+.hidden {
+  display: none;
+}

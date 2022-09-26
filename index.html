@@ -18,6 +18,7 @@
       <div class="filteringOptions">
         <div class="filterByHouse">
           <h3>by house:</h3>
+
           <ol>
             <li><button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor Only</button></li>
             <li><button class="filter" data-action="filter" data-filter="slytherin">Slytherin Only</button></li>
@@ -93,19 +94,19 @@
       </div>
     </main>
     <footer></footer>
+    <!-- STUDENT TEMPLATE OBJECT -->
+    <template id="studentTemplate">
+      <tr>
+        <td data-field="firstName">Harry</td>
+        <td data-field="lastName">Potter</td>
+        <td data-field="house">House</td>
+        <td data-field="prefect"><img src="assets/prefectBadge.png" alt="icon of prefect badge" class="prefectImg" /></td>
+        <td data-field="inqSquad"><img src="assets/ingSquadBadge.png" alt="icon of inq squad badge" class="inqSquadImg" /></td>
+
+        <td data-field="modal"><button class="modalButton">See More</button></td>
+      </tr>
+    </template>
   </body>
 
-  <!-- STUDENT TEMPLATE OBJECT -->
-  <template id="studentTemplate">
-    <tr>
-      <td data-field="firstName">Harry</td>
-      <td data-field="lastName">Potter</td>
-      <td data-field="house">House</td>
-      <td data-field="prefect"><img src="assets/prefectBadge.png" alt="icon of prefect badge" class="prefectImg" /></td>
-      <td data-field="inqSquad"><img src="assets/ingSquadBadge.png" alt="icon of inq squad badge" class="inqSquadImg" /></td>
-
-      <td data-field="modal"><button class="modalButton">See More</button></td>
-    </tr>
-  </template>
   <script src="main.js"></script>
 </html>
