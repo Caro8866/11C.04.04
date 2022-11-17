@@ -129,6 +129,7 @@ table {
   font-family: Helvetica, Arial, sans-serif, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 3rem;
 }
 
 thead {
@@ -153,7 +154,7 @@ tr:nth-child(even) {
 .studentStatistics {
   background-color: rgb(48, 48, 48);
   color: white;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
   padding: 1rem 0;
