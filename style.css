@@ -106,6 +106,14 @@ ol {
 
 /*! FROM HERE ON; MY OWN STYLING*/
 
+.container {
+  --max-width: 900px;
+  --container-padding: 1.5rem;
+
+  width: min((var(--max-width)), 100% - (var(--container-padding) * 2));
+  margin-inline: auto;
+}
+
 .filteringOptions {
   display: flex;
   margin-bottom: 2rem;
@@ -116,10 +124,44 @@ ol {
   padding: 0 0 0.5rem 0.2rem;
 }
 
+table {
+  background-color: rgb(245, 245, 245);
+  font-family: Helvetica, Arial, sans-serif, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: rgb(47, 47, 47);
+  color: white;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  padding: 0.5rem;
+}
+
+tr:nth-child(even) {
+  background-color: #d5d4d4;
+}
+
+[data-field="modal"] {
+  text-align: center;
+}
+
+.studentStatistics {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+}
+
 .studentStatistics > ol {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
   justify-content: space-evenly;
 }
 
@@ -139,7 +181,7 @@ ol {
 
 /* Modal */
 .modal {
-  background-color: black;
+  background-color: rgba(87, 87, 87, 0.523);
   color: white;
   display: flex;
   flex-direction: row;
