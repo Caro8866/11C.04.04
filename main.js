@@ -7,6 +7,8 @@ const jsonURL = "https://petlatkea.dk/2021/hogwarts/students.json";
 
 // Global Student Array
 let allStudents = [];
+let enrolledStudents = [];
+let expelledStudents = [];
 
 let studentList;
 
@@ -299,5 +301,16 @@ function displayStudent(student) {
 }
 
 function updateStatistics() {
+  let gryffindorList = allStudents.filter(isGryffindor).length;
+  let slytherinList = allStudents.filter(isSlytherin).length;
+  let ravenclawList = allStudents.filter(isRavenclaw).length;
+  let hufflepuffList = allStudents.filter(isHufflepuff).length;
+
   document.querySelector("#totalStudents").textContent = allStudents.length;
+  document.querySelector("#enrolledStudents").textContent = expelledStudents.length;
+  document.querySelector("#expelledStudents").textContent = expelledStudents.length;
+  document.querySelector("#gryffindorStudents").textContent = gryffindorList;
+  document.querySelector("#slytherinStudents").textContent = slytherinList;
+  document.querySelector("#ravenclawStudents").textContent = ravenclawList;
+  document.querySelector("#hufflepuffStudents").textContent = hufflepuffList;
 }
