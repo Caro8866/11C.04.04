@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", start);
 
 // Student JSON Data
 const jsonURL = "https://petlatkea.dk/2021/hogwarts/students.json";
+const bloodJsonURL = "https://petlatkea.dk/2021/hogwarts/families.json";
 
 // Global Student Array
 let allStudents = [];
@@ -21,6 +22,7 @@ const Student = {
   gender: "",
   image: ".png",
   house: "",
+  blood: "",
   isPrefect: 0,
   isInqSquad: 0,
 };
@@ -98,6 +100,20 @@ function prepareObject(jsonObject) {
   student.house = house.substring(1, 0).toUpperCase() + house.substring(1).toLowerCase();
 
   // Blood
+  loadBloodJSON();
+
+  async function loadBloodJSON() {
+    const response = await fetch(bloodJsonURL);
+    const bloodFamilyList = await response.json();
+
+    student.blood = updateBlood(bloodFamilyList);
+
+    function updateBlood(bloodFamilyList) {
+      if (bloodFamilyList.pure.includes(student.lastName) === true) return "Pure Blood";
+      else if (bloodFamilyList.half.includes(student.lastName) === true) return "Half Blood";
+      return "Muggle";
+    }
+  }
 
   return student;
 }
@@ -292,6 +308,7 @@ function displayStudent(student) {
     document.querySelector("#studentGender").textContent = student.gender;
     document.querySelector("#studentHouse").textContent = student.house;
     document.querySelector("#studentImage").src = `assets/images/${student.image}`;
+    document.querySelector("#studentBloodStatus").textContent = student.blood;
   });
 
   // append clone to list
